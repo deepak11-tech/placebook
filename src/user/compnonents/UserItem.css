@@ -1,7 +1,13 @@
 .user-item {
-  margin: 1rem;
-  width: calc(45% - 2rem);
-  min-width: 17.5rem;
+  margin: 0;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.user-item:hover {
+  transform: translateY(-6px);
 }
 
 .user-item a {
@@ -13,27 +19,35 @@
   padding: 1rem;
   color: white;
   background: #292929;
+
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+
+  transition: background 0.3s ease;
 }
 
 .user-item a:hover,
 .user-item a:active {
-  background: #ffd900;
+  background: #f5c400;
 }
 
 .card.user-item__content {
   padding: 0;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .user-item__image {
-  width: 4rem;
-  height: 4rem;
+  width: 5rem;
+  height: 5rem;
   margin-right: 1rem;
+  flex-shrink: 0;
 }
 
 .user-item__info h2 {
   font-size: 1.5rem;
   margin: 0 0 0.5rem 0;
-  font-weight: normal;
+  font-weight: 600;
   color: #ffd900;
 }
 
@@ -46,4 +60,7 @@
 
 .user-item__info h3 {
   margin: 0;
+  color: #d1d5db;
+  font-size: 0.95rem;
+  font-weight: normal;
 }

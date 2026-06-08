@@ -3,6 +3,7 @@ import UsersList from '../compnonents/UsersList'
 import ErrorModal from '../../shared/components/UIElements/ErrorModal'
 import LoadingSpinner from '../../shared/components/UIElements/LoadingSpinner'
 import { useHttpClient } from '../../shared/hooks/http-hook'
+import './Users.css'
 
 const Users = () => {
   const { isLoading, error, sendRequest, clearError } = useHttpClient()
@@ -28,7 +29,24 @@ const Users = () => {
           <LoadingSpinner />
         </div>
       )}
-      {!isLoading && loadedUsers && <UsersList items={loadedUsers} />}
+      {!isLoading && loadedUsers && (
+        <>
+          <section className='hero'>
+            <h2>Explore Places Around the World</h2>
+
+            <p className='hero-subtitle'>
+              Discover destinations shared by travelers and explorers.
+            </p>
+
+            <div className='hero-stats'>
+              {' '}
+              Join {loadedUsers.length} Explorers
+            </div>
+          </section>
+
+          <UsersList items={loadedUsers} />
+        </>
+      )}
     </React.Fragment>
   )
 }
